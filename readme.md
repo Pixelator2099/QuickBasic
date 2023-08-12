@@ -4,6 +4,6 @@
 
 Allow to create windows and fix text inside it.
 
-[](screenshots/Windows Form for Quickbasic.png)
+![](/screenshots/Windows Form for Quickbasic.png)
 
 
