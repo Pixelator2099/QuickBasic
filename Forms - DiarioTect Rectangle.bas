@@ -1,3 +1,4 @@
+$Debug
 Rem FORM
 Rem Created by Chang C. (1995)
 Rem www.diariotec.com
@@ -23,7 +24,42 @@ Call Rectangle(3, 3 + itemh * 4, 55, itemh - 1, 14, 1, "Item 5")
 Call RectangleText(3, 3 + itemh * 4, 55, itemh - 1, 14, 1, "John William Cummings (Queens, Nueva York, 8 de octubre de 1948-Los Ángeles, California, 15 de septiembre de 2004), más conocido por su nombre artístico Johnny Ramone, fue un músico estadounidense, popular por haber sido el guitarrista de la banda de punk Ramones, en la que permaneció desde su formación en 1974 hasta su concierto final en 1996. ")
 
 Call Rectangle(60, 3, 17, 18, 10, 2, "Detail")
-Call RectangleText(60, 3, 17, 18, 10, 2, "Detail John William Cummings (Queens, Nueva York, 8 de octubre de 1948-Los Ángeles, California, 15 de septiembre de 2004), más conocido por su nombre artístico Johnny Ramone, fue un músico estadounidense, popular por haber sido el guitarrista de la banda de punk Ramones, en la que permaneció desde su formación en 1974 hasta su concierto final en 1996. ")
+Call RectangleLeftAlign(60, 3, 17, 18, 10, 2, "Detail John William Cummings (Queens, Nueva York, 8 de octubre de 1948-Los Ángeles, California, 15 de septiembre de 2004), más conocido por su nombre artístico Johnny Ramone, fue un músico estadounidense.")
+
+Sub RectangleLeftAlign (x As Integer, y As Integer, w As Integer, h As Integer, pcolor As Integer, pbgcolor As Integer, text As String)
+
+    If (x > 80) Then x = 79
+    If (y >= 24) Then y = 23
+
+    If (w + x) >= 80 Then
+        w = 79 - x
+    End If
+
+    If (h + y) >= 24 Then
+        h = 23 - y
+    End If
+
+
+    For f = y To y + h
+        Locate f + 1, x + 1
+        Dim tmpW As Integer
+        tmpW = 0
+
+        For fx = 1 To w - 1
+            If Mid$(text, fx, 1) = " " Then tmpW = fx
+        Next
+
+        If (tmpW = 0) Then tmpW = w
+
+        Print Left$(text, tmpW)
+
+        text = Mid$(text, tmpW + 1, Len(text) - tmpW)
+
+        If f > y + h - 3 Then Exit Sub
+
+    Next
+End Sub
+
 
 
 Sub RectangleText (x As Integer, y As Integer, w As Integer, h As Integer, pcolor As Integer, pbgcolor As Integer, text As String)
