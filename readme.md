@@ -8,3 +8,7 @@ Allow to create windows and fix text inside it. With left align.
 
 
 ![](https://github.com/Pixelator2099/QuickBasic/blob/main/screenshots/Windows%20Form%20for%20Quickbasic.png)
+
+
+Links
+[robhagemans/hoard-of-gwbasic](https://github.com/robhagemans/hoard-of-gwbasic)
