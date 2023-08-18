@@ -1,3 +1,4 @@
+' Extraido de https://www.facebook.com/groups/206305059708871/?multi_permalinks=2094983000841058&hoisted_section_header_type=recently_seen
 Screen 13: Cls
 ' Init variables
 Randomize Timer
